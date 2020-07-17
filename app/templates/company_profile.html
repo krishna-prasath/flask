@@ -1,0 +1,34 @@
+{%extends "base1.html"%}
+{%block active3%}active{%endblock%}
+{%block content1%}
+<div class="col-md-9">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {%block b3 %}{%endblock%}">
+                        <a class="nav-link" href="/company_profile/view">View Establishment Data{%block up%}{%endblock%} </a>
+                    </li>
+                    <li class="nav-item {%block b0 %}{%endblock%}">
+                        <a class="nav-link" href="/company_profile/create">Create Establishment <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item {%block b1 %}{%endblock%}">
+                        <a class="nav-link" href="/company_profile/update">Update Establishment</a> -->
+                    </li>
+                    <!-- <li class="nav-item {%block b2 %}{%endblock%}">
+                        <a class="nav-link " href="/company_profile/delete">Delete Establishment</a>
+                    </li> -->
+                </ul>
+               
+            </div>
+        </nav>
+
+        {%block content2%}
+        {%endblock%}
+{%endblock%}
+

@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+
+{%block header%}
+    <div class="col-sm" style="text-align: right;">
+      <small> Last logged on:<strong><span>{{time}}</span></strong></small>|
+      Welcome <i> {{name}}</i>|
+     <small><a href="/logout">Logout</a></small>
+     {%block msg%}{%endblock%}
+    </div>
+{%endblock%}
+
+{%block content %}
+
+<div class="container-fluid" style="margin-top: 30px;">
+  
+    <div class="row">
+      
+      <div class="col-md-3">
+        <div class="list-group">
+            <a href="/mainpage" class="list-group-item list-group-item-action {%block active0%}{%endblock%} ">Home</a>
+            <a href="/employee_register" class="list-group-item list-group-item-action {%block active1%}{%endblock%}" id="{{m}}" >Employee Register</a>
+            <a href="/attendence" class="list-group-item list-group-item-action {%block active2%}{%endblock%} " id="{{m}}">Attendence</a>
+            <a href="/company_profile/view" class="list-group-item list-group-item-action {%block active3%}{%endblock%}">Company Profile</a>
+            <a href="/cash_book" class="list-group-item list-group-item-action {%block active4%}{%endblock%}">Daily Cash Book</a>
+            <a href="#" class="list-group-item list-group-item-action {%block active5%}{%endblock%}">Billing</a>
+          </div>
+      </div>
+      {%block content1 %}
+      {%endblock%}
+    
+    </div></div>
+      {%endblock%}
+

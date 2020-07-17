@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.header{
+    margin: 0;
+    padding: 5px 20px;
+    background-color: #6b6a72;
+    color:white;
+
+}
+.login{
+    margin: 0;
+    background-image: url('/static/images/login_img.png');
+    background-repeat: no-repeat;
+    background-size:65% 100vh;
+    width: 100%;
+    height: 90vh;
+    
+}
+.h{
+  
+    margin-left: 65%;
+    margin-right: 5%;
+    padding: 10px;
+    padding-top: 10%;
+}
+#password1,#username1{
+    width:100%;
+}
+#zer{
+    margin: 0;
+}
+.p p{
+    padding: 3%;
+    border: 1.5px solid black;
+    border-radius: 3px;
+}

@@ -1,0 +1,119 @@
+{%extends "company_profile.html"%}
+{%block b3 %}active{%endblock%}
+{%block up %} / ViewAll{%endblock%}
+{% block content2 %}
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1   class="display-5" > {{d.cname}}</h1>
+                    
+                    <small>{{d.address}}</small>
+                </div>
+                <div class="col-md-4">
+                
+                <p>
+                    Contact Person: {{d.cp_name}}
+                    <br>
+                    Mobile:+91- {{d.phone}}
+                    <br>
+                    Email:{{d.email}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4" style="border: 2px solid #f8f9fb;">
+                    
+                    <div class=row>
+                        <div class="col-md-5">
+                           <a href="https://unifiedportal-emp.epfindia.gov.in/epfo/" target="_blank">
+                            <img src="/static/images/EPFO_official_logo.gif" role="link" height=45px width=45px></a>
+                        </div>
+                        <div class="col-md-6"><h2 style="margin: auto;">EPF</h2></div>
+                        
+                    </div>
+                  
+                    <hr style="margin: 0;">
+                    <br>
+                    <div class="p">
+                    <label for="p1">EPF Number</label>
+                    <p id="p1">{%if d.epf_no%}{{d.epf_no}} {%else%}None{%endif%}
+                    <img role="button" onclick="copyToClipboard('#p1')" src="/static/images/sheet.svg"style="float:right;width:1.5em;height:1.5em;"></p>
+                    <label for="p2">EPF Username</label>
+                    <p id="p2">{%if d.epf_userid%}{{d.epf_userid}} {%else%}None{%endif%}
+                        <img role="button" onclick="copyToClipboard('#p2')" src="/static/images/sheet.svg"style="float:right;width:1.5em;height:1.5em;">
+                    </p>
+                    <label for="p3">EPF Password</label>
+                    <p id="p3">{%if d.epf_pass%}{{d.epf_pass}} {%else%}None{%endif%}
+                        <img role="button" onclick="copyToClipboard('#p3')" src="/static/images/sheet.svg"style="float:right;width:1.5em;height:1.5em;">
+                    </p></div>
+
+                </div>
+                <div class="col-md-4" style="border: 2px solid #f8f9fb;">
+                    
+                    <div class=row>
+                        <div class="col-md-5">
+                            
+                            <a href="https://www.esic.in/ESICInsurance1/ESICInsurancePortal/PortalLogin.aspx" target="_blank">
+                            <img src="/static/images/esi logo.jpg" role="link" height=45px width=45px>
+                            </a>
+                        </div>
+                        <div class="col-md-6"><h2 style="margin: auto;">ESI</h2></div>
+                        
+                    </div>
+                   
+                    <hr style="margin: 0;">
+                    <br>
+                    <div class="p">
+                    <label for="p4">ESI Number</label>
+                    <p id="p4">{%if d.esi_no %}{{d.esi_no}} {%else%}None{%endif%}
+                        <img role="button" onclick="copyToClipboard('#p4')" src="/static/images/sheet.svg"style="float:right;width:1.5em;height:1.5em;">
+                    </p>
+                    <label for="p5">ESI Username</label>
+                    <p id="p5">{%if d.esi_userid%}{{d.esi_userid}}{%else%}None{%endif%}
+                       <img role="button" onclick="copyToClipboard('#p5')" src="/static/images/sheet.svg"style="float:right;width:1.5em;height:1.5em;">
+                    </p>
+                    <label for="p6">ESI Password</label>
+                    <p id="p6">{%if d.esi_pass %}{{d.esi_pass}} {%else%}None{%endif%}
+                        <img role="button" onclick="copyToClipboard('#p6')" src="/static/images/sheet.svg"style="float:right;width:1.5em;height:1.5em;">
+                    </p></div>
+
+
+
+                </div>
+                <div class="col-md-4" style="border: 2px solid #f8f9fb;">
+                    
+                    <div class=row>
+                        <div class="col-md-5">
+                            <img src="/static/images/dsc logo.png" height=45px width=45px>
+                        </div>
+                        <div class="col-md-6"><h2 style="margin: auto;">DSC</h2></div>
+                        
+                    </div>
+                    <hr style="margin: 0;">
+                    <br>
+                    <div class="p">
+                    <label for="p1">DSC Box Number</label>
+                    <p id="p1">{%if d.dsc_Boxno%}{{d.dsc_Boxno}} {%else%}None{%endif%}</p>
+                    <label for="p2">DSC Expiry Date</label>
+                    <p id="p2">{%if d.dsc_exp!=None%}{{d.dsc_exp.strftime("%d/%m/%Y")}}{%else%}None{%endif%}
+                        <svg style="float:right;"width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-calendar3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                            <path fill-rule="evenodd" d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                          </svg>
+                    </p>
+                    <label for="p3">DSC Sent Date</label>
+                    <p id="p3">{%if d.dsc_sent!=None%}{{d.dsc_sent.strftime("%d/%m/%Y")}}{%else%}None{%endif%}
+                        <svg style="float:right;"width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-calendar3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                            <path fill-rule="evenodd" d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                          </svg>
+                    </p></div>
+
+                </div>
+               
+            </div>
+            <br>
+            <a href="/company_profile/view" role="button" class="btn btn-danger">Go Back</a>
+        </div>
+{%endblock%}

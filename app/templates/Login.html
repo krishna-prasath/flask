@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+
+{%block title%}  Login {%endblock%}
+{%block content%}
+
+<script>
+    window.onload=function(){
+        setTimeout(function(){
+            document.getElementById("warnings").remove();
+        }, 2000 );
+    
+    };
+    
+</script>
+    <div class="login">
+        <div class="h">
+        {% if get_flashed_messages()%}
+        {% for i,j in get_flashed_messages(with_categories=true)%}
+        {%if i=='success'%}
+        <div id= "warnings" class="alert alert-success" role="alert">
+            <strong>{{j}}</strong></div>
+        {%else%}
+            <div id= "warnings" class="alert alert-danger" role="alert">
+                <strong>{{j}}</strong></div>
+            {%endif%}
+                {%endfor%}
+        {%endif%}
+        <h1>Login</h1>
+        <br>
+        <br>
+        <form action="/login" method="POST">
+        <label for="username">USER NAME</label>
+        <input type="text" id="username1" name="username">
+        <br>
+        <br>
+        <br>
+        <label for="password" style="text-align: left;">PASSWORD</label>
+        
+        <input type="password" id="password1" name="password">
+        <br><br><br>
+        <center>
+        <button type="submit" class="btn" style="width: 100%; background-color:#f05d24; color:aliceblue">Log In</button></center>
+        </form>
+        </div></div>
+{%endblock%}

@@ -1,0 +1,44 @@
+{%extends "base1.html"%}
+{%block active2%}active{%endblock%}
+
+
+{%block content1%}
+<div class="col-md-9">
+<div class="container">
+<h1 class="display-5">Attendence</h1>
+
+  
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Login Time</th>
+        <th scope="col">On Time</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%for i in att%}
+        {% if i.id not in [1,2]%}
+        <tr>
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.name}}</td>
+        <td>{{(i.timestamp).strftime("%d/%m/%Y, %H:%M")}}</td>
+        {%if i.timestamp.date()==today and i.timestamp.time()<=crct %}
+        <td>On Time</td>
+        {%else%}
+        <td>Late</td>
+        {%endif%}
+
+      </tr>
+      {%endif%}
+      {%endfor%}
+    </tbody>
+  </table>
+
+
+</div></div>
+
+
+
+{%endblock%}
